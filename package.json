@@ -1,0 +1,25 @@
+{
+  "name": "learning-electron",
+  "version": "0.1.0",
+  "description": "Learning Electron JS",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Youngestdev/learning-electron.git"
+  },
+  "keywords": [
+    "electron"
+  ],
+  "author": "Abdulazeez Abdulazeez Adeshina <laisibizness@gmail.com> (http://twitter.com/kvng_zeez)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Youngestdev/learning-electron/issues"
+  },
+  "homepage": "https://github.com/Youngestdev/learning-electron#readme",
+  "devDependencies": {
+    "electron": "^2.0.7"
+  }
+}

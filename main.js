@@ -1,13 +1,26 @@
-const {app, BrowserWindow} = require("electron");
+// const keytar = require('keytar');
+// const {app, BrowserWindow} = require("electron");
 
-function createWindow () {
-    win = new BrowserWindow({width: 800, height: 600})
+// keytar.setPassword('learning-electron', 'Test', 'secret');
 
-    win.loadFile('index.html')
+// function createWindow () {
+//     win = new BrowserWindow({width: 800, height: 600})
+
+//     win.loadFile('index.html')
     
-    // This code below open the Developer Tool because Electron uses a browser instance !.
-    win.webContents.openDevTools()
-    
-}
+//     // This code below open the Developer Tool because Electron uses a browser instance !.
+//     win.webContents.openDevTools()
 
-app.on('ready', createWindow)
+// }
+
+// app.on('ready', createWindow)
+
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
+let mainWindow;
+
+app.on('ready', () => {
+  mainWindow = new BrowserWindow();
+  mainWindow.webContents.openDevTools();
+  mainWindow.loadURL(path.join('file://', __dirname, 'index.html'));
+});

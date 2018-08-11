@@ -7,11 +7,27 @@ const secretValEl = document.querySelector('#secretValue');
 const output = document.querySelector('#output');
 
 
+const secret2 = new Promise((resolve, reject) => {
+  const secret = keytar.findPassword('KeytarTest');
+  // cons
+  if (secret){
+    let test = secret || 'Nothing set';
+    resolve(test)
+  } else {
+    reject(Error("Ah..!"))
+  }
+})
+
 getPasswordBtn.addEventListener('click', () => {
   // Params are: service name, account name. Both are arbitrary
-  const secret = keytar.findPassword('KeytarTest');
-  output.innerText = secret || 'Nothing set';
-  console.log(secret)
+  // console.log(secret)
+  secret2.then((fulfilled) => {
+    // console.log(fulfilled);
+    output.innerText = fulfilled;
+  })
+  .catch((error) => {
+    console.log(error.message);
+  })
 });
 
 setPasswordBtn.addEventListener('click', () => {
